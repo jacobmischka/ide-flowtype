@@ -21,9 +21,9 @@
     "core:loaded-shell-environment"
   ],
   "enhancedScopes": [
-    "source.js",
     "source.js.flow",
-    "source.jsx"
+    "source.jsx",
+    "source.js.jsx"
   ],
   "consumedServices": {
     "status-bar": {
