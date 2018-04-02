@@ -3,28 +3,29 @@
   "main": "./lib/main",
   "license": "BSD-3-Clause",
   "repository": "https://github.com/flowtype/ide-flowtype",
-  "version": "0.17.4",
+  "version": "0.22.1",
   "description": "Flow-typed JavaScript support for Atom IDE",
   "scripts": {
     "ci": "yarn lint",
-    "format": "prettier lib/**/*.js --write --single-quote --no-bracket-spacing --trailing-comma=es5 --jsx-bracket-same-line",
+    "format":
+      "prettier --write {lib,eslint-rules}/**/*.js .eslintrc.js package.json",
     "lint": "eslint lib"
   },
   "engines": {
-    "atom": ">=1.19.0"
+    "atom": ">=1.21.0"
   },
   "dependencies": {
-    "atom-languageclient": "0.6.1",
-    "flow-language-server": "^0.2.3"
+    "atom-languageclient": "0.9.2",
+    "flow-language-server": "0.4.3"
   },
-  "activationHooks": [
-    "core:loaded-shell-environment"
-  ],
-  "enhancedScopes": [
-    "source.js.flow",
-    "source.jsx",
-    "source.js.jsx"
-  ],
+  "activationHooks": ["core:loaded-shell-environment"],
+  "enhancedScopes": ["source.js.jsx", "source.js.flow", "source.jsx"],
+  "prettier": {
+    "bracketSpacing": false,
+    "proseWrap": "always",
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
   "consumedServices": {
     "status-bar": {
       "versions": {
@@ -72,6 +73,7 @@
   "devDependencies": {
     "eslint": "^v4.6.0",
     "eslint-config-fbjs-opensource": "^1.0.0",
+    "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-rulesdir": "^0.1.0",
     "prettier": "^1.6.1"
   }
